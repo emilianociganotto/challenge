@@ -14,6 +14,9 @@
 		41F13EBE239846FB00753FEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F13EBD239846FB00753FEB /* Assets.xcassets */; };
 		41F13EC1239846FB00753FEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F13EBF239846FB00753FEB /* LaunchScreen.storyboard */; };
 		41F13ECC239846FB00753FEB /* challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13ECB239846FB00753FEB /* challengeTests.swift */; };
+		41F13EDC23985BC500753FEB /* ServiceCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13EDB23985BC500753FEB /* ServiceCore.swift */; };
+		41F13EDE23985CE200753FEB /* URLStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13EDD23985CE200753FEB /* URLStruct.swift */; };
+		41F13EE023985E5400753FEB /* ConsumibleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13EDF23985E5400753FEB /* ConsumibleService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		41F13EC7239846FB00753FEB /* challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = challengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F13ECB239846FB00753FEB /* challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challengeTests.swift; sourceTree = "<group>"; };
 		41F13ECD239846FB00753FEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F13EDB23985BC500753FEB /* ServiceCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCore.swift; sourceTree = "<group>"; };
+		41F13EDD23985CE200753FEB /* URLStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLStruct.swift; sourceTree = "<group>"; };
+		41F13EDF23985E5400753FEB /* ConsumibleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumibleService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		41F13EB3239846F900753FEB /* challenge */ = {
 			isa = PBXGroup;
 			children = (
+				41F13EDA23985BB000753FEB /* Services */,
 				41F13ED72398471C00753FEB /* Sources */,
 				41F13ED62398470D00753FEB /* Resources */,
 				41F13EC2239846FB00753FEB /* Info.plist */,
@@ -129,6 +136,16 @@
 				41F13EB8239846F900753FEB /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		41F13EDA23985BB000753FEB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				41F13EDB23985BC500753FEB /* ServiceCore.swift */,
+				41F13EDD23985CE200753FEB /* URLStruct.swift */,
+				41F13EDF23985E5400753FEB /* ConsumibleService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +251,9 @@
 			files = (
 				41F13EB9239846F900753FEB /* ViewController.swift in Sources */,
 				41F13EB5239846F900753FEB /* AppDelegate.swift in Sources */,
+				41F13EDE23985CE200753FEB /* URLStruct.swift in Sources */,
+				41F13EDC23985BC500753FEB /* ServiceCore.swift in Sources */,
+				41F13EE023985E5400753FEB /* ConsumibleService.swift in Sources */,
 				41F13EB7239846F900753FEB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
