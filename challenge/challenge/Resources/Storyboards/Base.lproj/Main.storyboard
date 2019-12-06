@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HyO-UK-KcQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -125,6 +126,7 @@
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97618073225021362" green="0.97634369134902954" blue="0.97615915536880493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="ABL-lQ-HKW" firstAttribute="leading" secondItem="0SY-k0-SxA" secondAttribute="leading" id="AJV-Hp-wt3"/>
                                             <constraint firstItem="hRs-LQ-uIW" firstAttribute="top" secondItem="ABL-lQ-HKW" secondAttribute="bottom" constant="30" id="FZQ-kW-YLB"/>
@@ -144,10 +146,17 @@
                                             <constraint firstItem="ABL-lQ-HKW" firstAttribute="trailing" secondItem="0SY-k0-SxA" secondAttribute="trailing" id="ufG-Th-g9K"/>
                                             <constraint firstItem="bm5-fa-RK1" firstAttribute="top" secondItem="g44-A5-NSa" secondAttribute="top" id="wOt-7L-UT5"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3Zu-pq-buZ" appends="YES" id="IoP-PZ-mEu"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-8Z-dtS">
                                         <rect key="frame" x="0.0" y="557.5" width="414" height="294.5"/>
                                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wBZ-j0-Y9G" appends="YES" id="Jtl-Zm-C5K"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -178,11 +187,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="SHr-nB-Cb5"/>
                     <connections>
+                        <outlet property="contentView" destination="g44-A5-NSa" id="l1g-qR-Tby"/>
                         <outlet property="heightImage" destination="oKl-qp-Bej" id="Bdd-zr-aGP"/>
-                        <outlet property="searchInput" destination="ABL-lQ-HKW" id="gZv-ih-My4"/>
+                        <outlet property="searchTextField" destination="ABL-lQ-HKW" id="L4u-ZL-mC9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4q0-bP-Wkf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3Zu-pq-buZ">
+                    <connections>
+                        <action selector="clickContentView:" destination="oV7-B2-e96" id="yD3-GG-5cc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="wBZ-j0-Y9G">
+                    <connections>
+                        <action selector="clickContentView:" destination="oV7-B2-e96" id="TzG-jU-rsB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="63.768115942028992" y="89.732142857142847"/>
         </scene>
@@ -208,6 +228,17 @@
                                         <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-Bq-Giz">
+                                        <rect key="frame" x="30" y="15" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="bs6-f5-wIG"/>
+                                            <constraint firstAttribute="height" constant="30" id="j6g-hp-9Un"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="icon-flecha"/>
+                                        <connections>
+                                            <action selector="clickBack:" destination="nDU-UA-rqg" eventType="touchUpInside" id="CuN-sj-shd"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80784313730000001" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -216,6 +247,8 @@
                                     <constraint firstAttribute="height" constant="60" id="FiO-pp-dU8"/>
                                     <constraint firstAttribute="trailing" secondItem="mpt-Nj-kDZ" secondAttribute="trailing" constant="30" id="JE8-Ou-39C"/>
                                     <constraint firstItem="K7o-0v-Mri" firstAttribute="centerY" secondItem="tqs-3v-SXa" secondAttribute="centerY" id="bFy-Vz-l6Z"/>
+                                    <constraint firstItem="bfG-Bq-Giz" firstAttribute="centerY" secondItem="K7o-0v-Mri" secondAttribute="centerY" id="d6R-ME-zCh"/>
+                                    <constraint firstItem="bfG-Bq-Giz" firstAttribute="leading" secondItem="tqs-3v-SXa" secondAttribute="leading" constant="30" id="wHN-VP-gq6"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="UPB-hd-ujs">

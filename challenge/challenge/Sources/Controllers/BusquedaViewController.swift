@@ -10,13 +10,15 @@ import UIKit
 
 class BusquedaViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var searchInput: UITextField!
     @IBOutlet weak var heightImage: NSLayoutConstraint!
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var contentView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        searchInput.delegate = self
+        searchTextField.delegate = self
         //MARK: -Consumo de Servicio
         /*ConsumibleService.getSucursales(handler: { response in
             if let getSucursales = response {
@@ -31,7 +33,7 @@ class BusquedaViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: -TextField delegates
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchInput.endEditing(true)
+        searchTextField.endEditing(true)
         return true
     }
     
@@ -43,7 +45,15 @@ class BusquedaViewController: UIViewController, UITextFieldDelegate {
         heightImage.constant = 150
         textField.resignFirstResponder()
     }
-
+    
+    @IBAction func clickContentView(_ sender: Any) {
+        searchTextField.endEditing(true)
+    }
+    
+    func lupaAnimate(){
+        
+    }
+    
 }
 
 

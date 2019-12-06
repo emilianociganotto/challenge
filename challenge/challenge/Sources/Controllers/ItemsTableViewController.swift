@@ -32,6 +32,10 @@ class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    @IBAction func clickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - Table view data source
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
