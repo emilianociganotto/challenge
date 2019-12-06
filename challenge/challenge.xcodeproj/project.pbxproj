@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41D280672399C62C0095C29C /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D280662399C62C0095C29C /* ItemsTableViewController.swift */; };
+		41D2806B2399CE880095C29C /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D2806A2399CE880095C29C /* ItemTableViewCell.swift */; };
 		41F13EB5239846F900753FEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13EB4239846F900753FEB /* AppDelegate.swift */; };
 		41F13EB7239846F900753FEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13EB6239846F900753FEB /* SceneDelegate.swift */; };
 		41F13EB9239846F900753FEB /* BusquedaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13EB8239846F900753FEB /* BusquedaViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41D280662399C62C0095C29C /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		41D2806A2399CE880095C29C /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		41F13EB1239846F900753FEB /* challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F13EB4239846F900753FEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41F13EB6239846F900753FEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		413198042399B1F20055A435 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				41F13EBA239846F900753FEB /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		413198052399B2010055A435 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				41F13EBF239846FB00753FEB /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		413198062399B2090055A435 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				41F13EBD239846FB00753FEB /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		413198072399B22A0055A435 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				41D2806A2399CE880095C29C /* ItemTableViewCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
 		41F13EA8239846F900753FEB = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +144,9 @@
 		41F13ED62398470D00753FEB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				41F13EBD239846FB00753FEB /* Assets.xcassets */,
-				41F13EBA239846F900753FEB /* Main.storyboard */,
-				41F13EBF239846FB00753FEB /* LaunchScreen.storyboard */,
+				413198062399B2090055A435 /* Assets */,
+				413198052399B2010055A435 /* LaunchScreen */,
+				413198042399B1F20055A435 /* Storyboards */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -118,6 +154,7 @@
 		41F13ED72398471C00753FEB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				413198072399B22A0055A435 /* TableCells */,
 				41F13ED92398472700753FEB /* Controllers */,
 				41F13ED82398472300753FEB /* Core */,
 			);
@@ -137,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				41F13EB8239846F900753FEB /* BusquedaViewController.swift */,
+				41D280662399C62C0095C29C /* ItemsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,8 +300,10 @@
 			files = (
 				41F13EB9239846F900753FEB /* BusquedaViewController.swift in Sources */,
 				41F13EB5239846F900753FEB /* AppDelegate.swift in Sources */,
+				41D280672399C62C0095C29C /* ItemsTableViewController.swift in Sources */,
 				41F13EDE23985CE200753FEB /* URLStruct.swift in Sources */,
 				41F13EE52398656D00753FEB /* ExtensionClass.swift in Sources */,
+				41D2806B2399CE880095C29C /* ItemTableViewCell.swift in Sources */,
 				41F13EDC23985BC500753FEB /* ServiceCore.swift in Sources */,
 				41F13EE023985E5400753FEB /* ConsumibleService.swift in Sources */,
 				41F13EB7239846F900753FEB /* SceneDelegate.swift in Sources */,
