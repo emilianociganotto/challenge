@@ -10,10 +10,10 @@ import Foundation
 
 struct Urls {
     //MARK: - EndPoint Keys
-    static let opConsumible = "sucursales"
+    static let opConsumible = "sites/MLA/search?q="
     
     static var baseUrl: String {
-        return "http://192.168.3.81:4201/api/"
+        return "https://api.mercadolibre.com/"
     }
     
 }

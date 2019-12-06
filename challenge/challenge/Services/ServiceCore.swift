@@ -23,13 +23,13 @@ class HttpClientApi: NSObject{
         return HttpClientApi()
     }
     
-    func makeAPICall(baseUrl: String, opKey: String, params: Dictionary<String, Any>?, method: HttpMethod, completion: @escaping(Data?, HTTPURLResponse?, NSError?) -> Void, failure: @escaping (Data?, HTTPURLResponse?, NSError?) -> Void) {
-        request = URLRequest(url: URL(string: baseUrl + opKey)!)
-        if let params = params {
-            let  jsonData = try? JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-            request?.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request?.httpBody = jsonData//?.base64EncodedData()
+    func makeAPICall(baseUrl: String, opKey: String, params: String, method: HttpMethod, completion: @escaping(Data?, HTTPURLResponse?, NSError?) -> Void, failure: @escaping (Data?, HTTPURLResponse?, NSError?) -> Void) {
+        var finalParams = ""
+        if !params.isEmpty {
+            finalParams = params.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
         }
+        print("URL :", baseUrl + opKey + finalParams)
+        request = URLRequest(url: URL(string: baseUrl + opKey + finalParams)!)
         request?.httpMethod = method.rawValue
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30

@@ -19,16 +19,6 @@ class BusquedaViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         searchTextField.delegate = self
-        //MARK: -Consumo de Servicio
-        /*ConsumibleService.getSucursales(handler: { response in
-            if let getSucursales = response {
-                self.sucursales = getSucursales as! [SucursalModel]
-                print("Controller sucursal ", self.sucursales)
-            }
-            DispatchQueue.main.async {
-                self.sucursalTableView.reloadData()
-            }
-        })*/
     }
     
     //MARK: -TextField delegates
@@ -48,6 +38,19 @@ class BusquedaViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func clickContentView(_ sender: Any) {
         searchTextField.endEditing(true)
+    }
+    
+    @IBAction func clickSearch(_ sender: Any) {
+        if !searchTextField.text!.isEmpty{
+            ConsumibleService.getConsumible(searchText: searchTextField.text!, handler: { response in
+                if let items = response {
+                    print("Items: ")
+                }
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "toItemsTable", sender: nil)
+                }
+            })
+        }
     }
     
     func lupaAnimate(){
