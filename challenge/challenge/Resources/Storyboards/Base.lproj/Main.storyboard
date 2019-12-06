@@ -91,7 +91,6 @@
                                                 <rect key="frame" x="132" y="100" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="LAN-Ju-niI"/>
-                                                    <constraint firstAttribute="width" secondItem="hwi-6U-RUF" secondAttribute="height" multiplier="1:1" id="e2k-Vx-aE6"/>
                                                     <constraint firstAttribute="height" constant="150" id="oKl-qp-Bej"/>
                                                 </constraints>
                                             </imageView>
@@ -149,9 +148,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-8Z-dtS">
                                         <rect key="frame" x="0.0" y="557.5" width="414" height="294.5"/>
                                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="294.5" id="Qhk-0x-Uh7"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -159,6 +155,7 @@
                                     <constraint firstItem="g44-A5-NSa" firstAttribute="leading" secondItem="tbS-xF-f92" secondAttribute="leading" id="6UM-Bh-wqP"/>
                                     <constraint firstItem="WeQ-8Z-dtS" firstAttribute="top" secondItem="g44-A5-NSa" secondAttribute="bottom" id="9Iu-DA-X75"/>
                                     <constraint firstItem="WeQ-8Z-dtS" firstAttribute="leading" secondItem="69B-XI-HsU" secondAttribute="leading" id="CzW-oh-zXm"/>
+                                    <constraint firstItem="WeQ-8Z-dtS" firstAttribute="bottom" secondItem="69B-XI-HsU" secondAttribute="bottom" priority="250" id="DED-iD-8SZ"/>
                                     <constraint firstItem="g44-A5-NSa" firstAttribute="top" secondItem="tbS-xF-f92" secondAttribute="top" id="FFH-j6-Ps3"/>
                                     <constraint firstAttribute="trailing" secondItem="g44-A5-NSa" secondAttribute="trailing" id="HgP-E3-rcU"/>
                                     <constraint firstItem="69B-XI-HsU" firstAttribute="trailing" secondItem="WeQ-8Z-dtS" secondAttribute="trailing" id="JTl-yl-gR9"/>
@@ -181,6 +178,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SHr-nB-Cb5"/>
                     <connections>
+                        <outlet property="heightImage" destination="oKl-qp-Bej" id="Bdd-zr-aGP"/>
                         <outlet property="searchInput" destination="ABL-lQ-HKW" id="gZv-ih-My4"/>
                     </connections>
                 </viewController>
