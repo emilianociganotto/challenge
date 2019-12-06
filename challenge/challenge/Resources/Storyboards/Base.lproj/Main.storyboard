@@ -180,6 +180,9 @@
                         <viewLayoutGuide key="safeArea" id="5sM-Ld-62y"/>
                     </view>
                     <navigationItem key="navigationItem" id="SHr-nB-Cb5"/>
+                    <connections>
+                        <outlet property="searchInput" destination="ABL-lQ-HKW" id="gZv-ih-My4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4q0-bP-Wkf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -311,6 +314,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CsU-0R-mAm"/>
                     <connections>
+                        <outlet property="footerView" destination="iJr-Fk-cxg" id="9T7-TE-L0B"/>
                         <outlet property="tableView" destination="UPB-hd-ujs" id="A9s-f5-0aZ"/>
                     </connections>
                 </viewController>

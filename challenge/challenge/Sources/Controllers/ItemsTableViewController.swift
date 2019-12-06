@@ -11,6 +11,7 @@ import UIKit
 class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var footerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,17 @@ class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            footerView.isHidden = true
+            tableView.layer.cornerRadius = 5.0
+        }else {
+            footerView.isHidden = false
+            tableView.layer.cornerRadius = 0.0
+        }
     }
     
     // MARK: - Table view data source

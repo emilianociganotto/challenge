@@ -10,6 +10,8 @@ import UIKit
 
 class BusquedaViewController: UIViewController {
 
+    @IBOutlet weak var searchInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
