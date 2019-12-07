@@ -69,7 +69,15 @@ class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toDetalle", sender: nil)
+        self.performSegue(withIdentifier: "toDetalle", sender: self.itemsTable?[indexPath.item])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetalle" {
+            if let detalleViewController = segue.destination as? DetalleViewController {
+                detalleViewController.itemSelected = sender as? ItemModel
+            }
+        }
     }
     
     //MARK: - Custom Func
