@@ -24,6 +24,12 @@ class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tableView.separatorInset = .zero
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
@@ -66,6 +72,7 @@ class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableVi
         self.performSegue(withIdentifier: "toDetalle", sender: nil)
     }
     
+    //MARK: - Custom Func
     func numberConverter(number: Float)-> String{
         let num = NSNumber(value: number)
         let formatter : NumberFormatter = NumberFormatter()

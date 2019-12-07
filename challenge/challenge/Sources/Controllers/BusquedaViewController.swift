@@ -10,7 +10,6 @@ import UIKit
 
 class BusquedaViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var heightImage: NSLayoutConstraint!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var contentView: UIView!
     
@@ -27,12 +26,7 @@ class BusquedaViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        heightImage.constant = 0
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        heightImage.constant = 150
         textField.resignFirstResponder()
     }
     
@@ -62,10 +56,6 @@ class BusquedaViewController: UIViewController, UITextFieldDelegate {
                 itemsTableViewController.itemsTable = sender as? [ItemModel]
             }
         }
-    }
-    
-    func lupaAnimate(){
-        
     }
     
 }
