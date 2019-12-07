@@ -22,6 +22,10 @@
 		41F13EDE23985CE200753FEB /* URLStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13EDD23985CE200753FEB /* URLStruct.swift */; };
 		41F13EE023985E5400753FEB /* ConsumibleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13EDF23985E5400753FEB /* ConsumibleService.swift */; };
 		41F13EE52398656D00753FEB /* ExtensionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F13EE42398656D00753FEB /* ExtensionClass.swift */; };
+		62DD4F16239C3EC800C25D3A /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DD4F15239C3EC800C25D3A /* ItemModel.swift */; };
+		62DD4F18239C401E00C25D3A /* InstallmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DD4F17239C401E00C25D3A /* InstallmentModel.swift */; };
+		62DD4F1B239C40A000C25D3A /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DD4F1A239C40A000C25D3A /* AddressModel.swift */; };
+		62DD4F1D239C416700C25D3A /* AttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DD4F1C239C416700C25D3A /* AttributeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		41F13EDD23985CE200753FEB /* URLStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLStruct.swift; sourceTree = "<group>"; };
 		41F13EDF23985E5400753FEB /* ConsumibleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumibleService.swift; sourceTree = "<group>"; };
 		41F13EE42398656D00753FEB /* ExtensionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionClass.swift; sourceTree = "<group>"; };
+		62DD4F15239C3EC800C25D3A /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		62DD4F17239C401E00C25D3A /* InstallmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentModel.swift; sourceTree = "<group>"; };
+		62DD4F1A239C40A000C25D3A /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		62DD4F1C239C416700C25D3A /* AttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +136,6 @@
 		41F13EB3239846F900753FEB /* challenge */ = {
 			isa = PBXGroup;
 			children = (
-				41F13EE12398646500753FEB /* ExtensionsClass */,
 				41F13EDA23985BB000753FEB /* Services */,
 				41F13ED72398471C00753FEB /* Sources */,
 				41F13ED62398470D00753FEB /* Resources */,
@@ -159,6 +166,8 @@
 		41F13ED72398471C00753FEB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				62DD4F14239C3EAC00C25D3A /* Models */,
+				41F13EE12398646500753FEB /* ExtensionsClass */,
 				413198072399B22A0055A435 /* TableCells */,
 				41F13ED92398472700753FEB /* Controllers */,
 				41F13ED82398472300753FEB /* Core */,
@@ -201,6 +210,17 @@
 				41F13EE42398656D00753FEB /* ExtensionClass.swift */,
 			);
 			path = ExtensionsClass;
+			sourceTree = "<group>";
+		};
+		62DD4F14239C3EAC00C25D3A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				62DD4F15239C3EC800C25D3A /* ItemModel.swift */,
+				62DD4F17239C401E00C25D3A /* InstallmentModel.swift */,
+				62DD4F1A239C40A000C25D3A /* AddressModel.swift */,
+				62DD4F1C239C416700C25D3A /* AttributeModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,13 +327,17 @@
 				41A61F16239B274E001BDB4A /* CaracteristicasItemTableViewCell.swift in Sources */,
 				41F13EB9239846F900753FEB /* BusquedaViewController.swift in Sources */,
 				41F13EB5239846F900753FEB /* AppDelegate.swift in Sources */,
+				62DD4F1D239C416700C25D3A /* AttributeModel.swift in Sources */,
+				62DD4F18239C401E00C25D3A /* InstallmentModel.swift in Sources */,
 				41D280672399C62C0095C29C /* ItemsTableViewController.swift in Sources */,
 				41F13EDE23985CE200753FEB /* URLStruct.swift in Sources */,
 				41A61F18239B287B001BDB4A /* DetalleViewController.swift in Sources */,
+				62DD4F16239C3EC800C25D3A /* ItemModel.swift in Sources */,
 				41F13EE52398656D00753FEB /* ExtensionClass.swift in Sources */,
 				41D2806B2399CE880095C29C /* ItemTableViewCell.swift in Sources */,
 				41F13EDC23985BC500753FEB /* ServiceCore.swift in Sources */,
 				41F13EE023985E5400753FEB /* ConsumibleService.swift in Sources */,
+				62DD4F1B239C40A000C25D3A /* AddressModel.swift in Sources */,
 				41F13EB7239846F900753FEB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

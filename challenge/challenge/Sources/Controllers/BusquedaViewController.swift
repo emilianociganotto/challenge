@@ -43,13 +43,24 @@ class BusquedaViewController: UIViewController, UITextFieldDelegate {
     @IBAction func clickSearch(_ sender: Any) {
         if !searchTextField.text!.isEmpty{
             ConsumibleService.getConsumible(searchText: searchTextField.text!, handler: { response in
-                if let items = response {
-                    print("Items: ")
-                }
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "toItemsTable", sender: nil)
+                if let items = response as! [ItemModel]?{
+                    if items.count != 0{
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "toItemsTable", sender: items)
+                        }
+                    }else{
+                        print("Error mensaje")
+                    }
                 }
             })
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toItemsTable" {
+            if let itemsTableViewController = segue.destination as? ItemsTableViewController {
+                itemsTableViewController.itemsTable = sender as? [ItemModel]
+            }
         }
     }
     

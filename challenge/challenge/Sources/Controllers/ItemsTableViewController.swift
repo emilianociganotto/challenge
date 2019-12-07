@@ -13,12 +13,15 @@ class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var footerView: UIView!
     
+    var itemsTable: [ItemModel]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
+        self.tableView.separatorInset = .zero
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -40,16 +43,34 @@ class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableVi
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return itemsTable!.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
-        cell.imagenCell.image = UIImage(named: "image-lupa")
+        let stringUrl = (itemsTable?[indexPath.item].imageUrl)!
+        let imageURL = URL(string: stringUrl)!
+        cell.imagenCell.load(url: imageURL)
+        
+        let precio = numberConverter(number: itemsTable?[indexPath.item].price ?? 0)
+        cell.precioLabel.text =  precio + " " + (itemsTable?[indexPath.item].currency ?? "")
+        
+        cell.tituloLabel.text = itemsTable![indexPath.item].title
+        
+        let cantidadDisponible = itemsTable?[indexPath.item].itemsAvailable ?? 0
+        cell.stockLabel.text = String(cantidadDisponible) + " disponibles"
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "toDetalle", sender: nil)
+    }
+    
+    func numberConverter(number: Float)-> String{
+        let num = NSNumber(value: number)
+        let formatter : NumberFormatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let str = formatter.string(from: num)!
+        return str
     }
 }
