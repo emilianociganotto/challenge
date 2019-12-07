@@ -26,8 +26,8 @@ class ConsumibleService{
                         sucursalModel.nombre = sucursal["nombre"] as? String
                         sucursalModel.direccion = sucursal["direccion"] as? String
                         sucursalesList.append(sucursalModel)
-                    }
-                handler(sucursalesList)*/
+                    }*/
+                handler(busquedas)
                 }else{
                     print("No se pudo parsear el pedido")
                 }
