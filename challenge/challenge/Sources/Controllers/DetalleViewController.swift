@@ -33,6 +33,11 @@ class DetalleViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableHeightConstraint.constant = CGFloat(44*caracteristicas.count)
     }
     
+    @IBAction func clickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -49,5 +54,5 @@ class DetalleViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.secondLabel.text = caracteristicas[indexPath.item]
         return cell
     }
-
+    
 }
