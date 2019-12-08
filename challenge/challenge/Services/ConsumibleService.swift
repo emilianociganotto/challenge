@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os
 
 class ConsumibleService{
     
@@ -18,7 +19,6 @@ class ConsumibleService{
                 var itemsModel = [ItemModel]()
                 if let busquedas = json as? [String : AnyObject]{
                     if let results = busquedas["results"] as? [[String : AnyObject]]{
-                        print("Results: ", results)
                         for result in results {
                             let itemModel = ItemModel()
                             itemModel.title = result["title"] as? String
@@ -61,15 +61,14 @@ class ConsumibleService{
                     }
                 handler(itemsModel)
                 }else{
-                    print("No se pudo parsear el pedido")
+                    os_log("No se pudo parsear el pedido", type: .info)
                 }
             }catch let jsonError{
-                print(jsonError)
+                os_log("%s.", type: .error, jsonError.localizedDescription)
             }
         }
             ,failure: { (data, response, error) in
-                print(error as Any, "getSucursales")
-                
+                os_log("%s.", type: .error, error.debugDescription)
         })
         
     }

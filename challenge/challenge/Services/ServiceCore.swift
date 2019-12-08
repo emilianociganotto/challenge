@@ -28,8 +28,7 @@ class HttpClientApi: NSObject{
         if !params.isEmpty {
             finalParams = params.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
         }
-        print("URL :", baseUrl + opKey + finalParams)
-        request = URLRequest(url: URL(string: baseUrl + opKey + finalParams)!)
+        request = URLRequest(url: URL(string: baseUrl + opKey + finalParams) ?? URL(string: baseUrl + opKey)!)
         request?.httpMethod = method.rawValue
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30

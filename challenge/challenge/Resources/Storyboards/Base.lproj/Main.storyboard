@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g44-A5-NSa">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="557.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="577.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bm5-fa-RK1">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -124,16 +124,33 @@
                                                     <constraint firstAttribute="width" constant="25" id="jWo-dl-NEl"/>
                                                 </constraints>
                                             </imageView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-WM-gnc">
+                                                <rect key="frame" x="187" y="547.5" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="LgL-7I-xkD"/>
+                                                    <constraint firstAttribute="height" constant="40" id="XBf-CN-7e5"/>
+                                                </constraints>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCA-uh-1Rp">
+                                                <rect key="frame" x="207" y="557.5" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97618073225021362" green="0.97634369134902954" blue="0.97615915536880493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="bCA-uh-1Rp" secondAttribute="bottom" constant="20" id="0gj-kb-AKT"/>
                                             <constraint firstItem="ABL-lQ-HKW" firstAttribute="leading" secondItem="0SY-k0-SxA" secondAttribute="leading" id="AJV-Hp-wt3"/>
+                                            <constraint firstItem="bCA-uh-1Rp" firstAttribute="centerX" secondItem="g44-A5-NSa" secondAttribute="centerX" id="ARn-gw-0Bf"/>
+                                            <constraint firstItem="bCA-uh-1Rp" firstAttribute="top" secondItem="hRs-LQ-uIW" secondAttribute="bottom" constant="30" id="CGp-xK-XKd"/>
                                             <constraint firstItem="hRs-LQ-uIW" firstAttribute="top" secondItem="ABL-lQ-HKW" secondAttribute="bottom" constant="30" id="FZQ-kW-YLB"/>
                                             <constraint firstAttribute="trailing" secondItem="7he-se-Rb6" secondAttribute="trailing" constant="50" id="HOE-rT-AXa"/>
                                             <constraint firstAttribute="trailing" secondItem="hRs-LQ-uIW" secondAttribute="trailing" constant="30" id="PHq-p0-SWp"/>
                                             <constraint firstItem="hwi-6U-RUF" firstAttribute="centerX" secondItem="g44-A5-NSa" secondAttribute="centerX" id="TO3-Ic-8Be"/>
                                             <constraint firstItem="0SY-k0-SxA" firstAttribute="leading" secondItem="g44-A5-NSa" secondAttribute="leading" constant="30" id="Vyh-52-9cA"/>
+                                            <constraint firstItem="UP6-WM-gnc" firstAttribute="top" secondItem="hRs-LQ-uIW" secondAttribute="bottom" constant="20" id="WeX-aW-PVF"/>
                                             <constraint firstItem="ABL-lQ-HKW" firstAttribute="top" secondItem="0SY-k0-SxA" secondAttribute="bottom" constant="40" id="XMe-mc-iag"/>
                                             <constraint firstAttribute="trailing" secondItem="bm5-fa-RK1" secondAttribute="trailing" id="aRI-ov-yzU"/>
                                             <constraint firstItem="hwi-6U-RUF" firstAttribute="top" secondItem="bm5-fa-RK1" secondAttribute="bottom" constant="40" id="bha-ep-rkC"/>
@@ -142,16 +159,16 @@
                                             <constraint firstAttribute="trailing" secondItem="0SY-k0-SxA" secondAttribute="trailing" constant="30" id="lUi-QF-8wi"/>
                                             <constraint firstItem="hRs-LQ-uIW" firstAttribute="leading" secondItem="g44-A5-NSa" secondAttribute="leading" constant="30" id="mtF-cu-3vJ"/>
                                             <constraint firstItem="0SY-k0-SxA" firstAttribute="top" secondItem="hwi-6U-RUF" secondAttribute="bottom" constant="40" id="pRz-qu-fx0"/>
-                                            <constraint firstAttribute="bottom" secondItem="hRs-LQ-uIW" secondAttribute="bottom" constant="30" id="rHf-14-FSN"/>
                                             <constraint firstItem="ABL-lQ-HKW" firstAttribute="trailing" secondItem="0SY-k0-SxA" secondAttribute="trailing" id="ufG-Th-g9K"/>
                                             <constraint firstItem="bm5-fa-RK1" firstAttribute="top" secondItem="g44-A5-NSa" secondAttribute="top" id="wOt-7L-UT5"/>
+                                            <constraint firstItem="UP6-WM-gnc" firstAttribute="centerX" secondItem="g44-A5-NSa" secondAttribute="centerX" id="yFW-sT-H7D"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="3Zu-pq-buZ" appends="YES" id="IoP-PZ-mEu"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-8Z-dtS">
-                                        <rect key="frame" x="0.0" y="557.5" width="414" height="294.5"/>
+                                        <rect key="frame" x="0.0" y="577.5" width="414" height="274.5"/>
                                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -187,7 +204,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="SHr-nB-Cb5"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="UP6-WM-gnc" id="n8N-7J-Hcs"/>
                         <outlet property="contentView" destination="g44-A5-NSa" id="l1g-qR-Tby"/>
+                        <outlet property="errorLabel" destination="bCA-uh-1Rp" id="CIq-cO-hw1"/>
                         <outlet property="searchTextField" destination="ABL-lQ-HKW" id="L4u-ZL-mC9"/>
                         <segue destination="nDU-UA-rqg" kind="show" identifier="toItemsTable" id="aPg-Wh-aQD"/>
                     </connections>

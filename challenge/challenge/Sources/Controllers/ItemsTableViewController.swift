@@ -54,12 +54,12 @@ class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableVi
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
-        let stringUrl = (itemsTable?[indexPath.item].imageUrl)!
-        let imageURL = URL(string: stringUrl)!
-        cell.imagenCell.load(url: imageURL)
-        
-        let precio = numberConverter(number: itemsTable?[indexPath.item].price ?? 0)
-        cell.precioLabel.text =  precio + " " + (itemsTable?[indexPath.item].currency ?? "")
+        let stringUrl = itemsTable?[indexPath.item].imageUrl ?? ""
+        if let imageURL = URL(string: stringUrl){
+            cell.imagenCell.load(url: imageURL)
+        }
+        let precio = String(itemsTable?[indexPath.item].price ?? 0)
+        cell.precioLabel.text =  precio + " " + (itemsTable?[indexPath.item].currency ?? "$")
         
         cell.tituloLabel.text = itemsTable![indexPath.item].title
         
@@ -78,14 +78,5 @@ class ItemsTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 detalleViewController.itemSelected = sender as? ItemModel
             }
         }
-    }
-    
-    //MARK: - Custom Func
-    func numberConverter(number: Float)-> String{
-        let num = NSNumber(value: number)
-        let formatter : NumberFormatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        let str = formatter.string(from: num)!
-        return str
     }
 }
